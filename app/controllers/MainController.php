@@ -1,5 +1,6 @@
 <?php
 namespace app\controllers;
+use \app\models\Main;
 
 /**
  * Created by PhpStorm.
@@ -19,9 +20,10 @@ class MainController extends AppController
 //        $this->view = 'test';
 //        echo "Main Controller index action";
 //        echo json_encode(['1'=>'index without layout']);
-
+        $model = new Main();
+        $posts = $model->findAll();
         $name = "Yura";
-        $this->set(['name'=>$name, 'another_var'=>'hello']);
+        $this->set(['name'=>$name, 'posts'=>$posts]);
 
     }
 
