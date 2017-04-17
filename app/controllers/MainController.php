@@ -96,15 +96,22 @@ class MainController extends AppController
 
     public function registerAction()
     {
-        $modelUser = new User();
-        $modelUser->fetchModel();
-
-        $errors = $modelUser->validate();
-        if(empty($errors))
-        {
-            if ($modelUser->save())
-                header('Location: /');
+        if(  $this->user ) {
+            header("Location:  /");
         }
+        $errors =[];
+        $modelUser = new User();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $modelUser->fetchModel();
+
+            $errors = $modelUser->validate();
+            if(empty($errors))
+            {
+                if ($modelUser->save())
+                    header('Location: /');
+            }
+        }
+
         $this->set(['model'=>$modelUser, 'errors'=>$errors]);
 
     }

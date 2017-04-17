@@ -47,10 +47,10 @@ class User extends Model
         $sql = "INSERT INTO {$this->table}(login, f_name, l_name, password) VALUES (:login, :f_name, :l_name, :password)";
 
         $bindParams = [
-            'login' => $this->login,
-            'f_name' => $this->f_name,
-            'l_name' => $this->l_name,
-            'password' => $this->password,
+            ':login' => $this->login,
+            ':f_name' => $this->f_name,
+            ':l_name' => $this->l_name,
+            ':password' =>md5($this->password) ,
         ];
         $stmt = $this->pdo->queryBindParams($sql, $bindParams);
 

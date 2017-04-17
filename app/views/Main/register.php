@@ -9,18 +9,20 @@
                     <form role="form" method="post">
 
                         <div class="form-group">
-                            <input type="text" id="login" name="login" placeholder="Login" class="form-control input-sm" required
+                            <input type="text" id="login" name="login" placeholder="Login" class="form-control input-sm"
+                                   required
                                    value="<?php echo (isset($model->login)) ? $model->login : ""; ?>"
                             >
                             <p class="help-block">Login is required</p>
-                            <p class="has-error"><?php echo (isset($errors['login'])) ? $errors['login'] : ""; ?></p>
+                            <p class="has-error text-danger"><?php echo (isset($errors['login'])) ? $errors['login'] : ""; ?></p>
                         </div>
 
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
 
-                                    <input type="text" id="f_name" name="f_name" placeholder="First Name" class="form-control input-sm" required
+                                    <input type="text" id="f_name" name="f_name" placeholder="First Name"
+                                           class="form-control input-sm" required
                                            value="<?php echo (isset($model->f_name)) ? $model->f_name : ""; ?>">
                                     <p class="help-block ">First Name is required</p>
                                     <p class="has-error text-danger"><?php echo (isset($errors['f_name'])) ? $errors['f_name'] : ""; ?></p>
@@ -29,7 +31,8 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" id="l_name" name="l_name" placeholder="Last Name" class="form-control input-sm"
+                                    <input type="text" id="l_name" name="l_name" placeholder="Last Name"
+                                           class="form-control input-sm"
                                            value="<?php echo (isset($model->l_name)) ? $model->l_name : ""; ?>">
                                     <p class="help-block"></p>
                                     <p class="has-error text-danger"><?php echo (isset($errors['l_name'])) ? $errors['l_name'] : ""; ?></p>
@@ -53,8 +56,11 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1">
-                                    <p class="has-error text-danger"><?php echo (isset($errors['password'])) ? $errors['password'] : ""; ?></p>
+                                    <div class="form-group ">
 
+                                        <p class="has-error text-danger"><?php echo (isset($errors['password'])) ? $errors['password'] : ""; ?></p>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -14,8 +14,8 @@ class Auth {
 //var_dump($_POST);
         if(isset($_POST["login"]) && isset($_POST["password"])) {
             $user = $_POST["login"];
-            $pass = $_POST["password"];
-//            $pass = md5($_POST["password"]);
+//            $pass = $_POST["password"];
+            $pass = md5($_POST["password"]);
             $user = User::findByLogin($user);
             if($user!==false && $user->password==$pass)
             {

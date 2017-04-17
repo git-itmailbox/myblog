@@ -31,9 +31,9 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li class=""><a href="/main/register">Registration</a></li>
-
             <?php if(!$user): ?>
+                <li class=""><a href="/main/register">Registration</a></li>
+
                 <li><a href="/main/login">Login</a></li>
             <?php endif; ?>
 
