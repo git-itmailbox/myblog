@@ -14,6 +14,7 @@
 </head>
 <body>
 <h1>Hello, world!</h1>
+<h3>default layout</h3>
 <?=$content?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>

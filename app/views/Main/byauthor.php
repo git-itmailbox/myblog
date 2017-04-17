@@ -48,6 +48,15 @@
                 </div>
             </div>
         <?php endforeach; ?>
+
+    <?php else: ?>
+        <div class="post bg-info">
+            <div class="row text-center">
+                <div class="col-md-12">
+                <p class="text-info"><strong>No posts.</strong> </p>
+                </div>
+            </div>
+        </div>
     <?php endif; ?>
 
 </div>

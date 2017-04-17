@@ -1,0 +1,15 @@
+{
+  "name": "yuritbox/myblog",
+  "description": "Simple blog",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Shportko Yuriy",
+      "email": "yure.new.ys@gmail.com"
+    }
+  ],
+  "require": {
+
+  }
+}

@@ -36,23 +36,32 @@ abstract class Controller
      */
     protected $vars = [];
 
+    /**
+     * auth user
+     * @var User
+     */
+    protected $user;
+
 
     public function __construct($route)
     {
         $this->route = $route;
         $this->view = $route['action'];
-//        $this->view = $route['action'];
-//        include APP . "/views/{$route['controller']}/{$this->view}.php";
     }
 
     public function getView()
     {
         $viewObj = new View( $this->route, $this->layout, $this->view  );
-        $viewObj->render($this->vars);
+        $viewObj->render($this->vars, $this->user);
     }
 
     public function set($vars)
     {
         $this->vars=$vars;
+    }
+
+    public function setAuth($user)
+    {
+        $this->user=$user;
     }
 }

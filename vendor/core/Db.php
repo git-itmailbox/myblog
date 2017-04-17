@@ -33,27 +33,47 @@ class Db
      */
     public static function instance()
     {
-        if(self::$instance ===null){
+        if (self::$instance === null) {
             self::$instance = new self();
         }
         return self::$instance;
     }
 
-    public function execute($sql)
+    public function execute($sql, $params = [])
     {
         $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute();
+        return $stmt->execute($params);
     }
 
-    public function query($sql)
+    public function query($sql, $params = [])
     {
         $stmt = $this->pdo->prepare($sql);
-        $res = $stmt->execute();
-        if($res !== false){
+
+        $res = $stmt->execute($params);
+        if ($res !== false) {
             return $stmt->fetchAll();
         }
         return [];
     }
 
+    public function queryOneRow($sql, $params = [])
+    {
+        $stmt = $this->pdo->prepare($sql);
+
+        $res = $stmt->execute($params);
+        if ($res !== false) {
+            return $stmt->fetch();
+        }
+        return [];
+    }
+
+    public function queryBindParams($sql, $params = [])
+    {
+        $stmt = $this->pdo->prepare($sql);
+        foreach ($params as $key => $value) {
+            $stmt->bindValue($key, $value);
+        }
+        return $stmt->execute();
+    }
 
 }
